@@ -7,7 +7,6 @@ import { Http} from '@angular/http';
   styleUrls: ['./home.css']
 })
 export class HomeComponent {
-
   constructor(private http: Http) {
 
   }

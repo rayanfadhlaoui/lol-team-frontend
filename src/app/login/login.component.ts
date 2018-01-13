@@ -8,7 +8,7 @@ import { Router,
     styleUrls: ['./login.css']
 })
 export class LoginComponent {
-  netImage: any = 'images/Arcade-Riven.png';
+  netImage: any = 'assets/images/Arcade-Riven.png';
   messageError: string;
   user = {'username' : '', 'password': '' };
 
@@ -16,7 +16,6 @@ export class LoginComponent {
   }
 
   login() {
-    alert(this.authService.redirectUrl);
     const sub = this.authService.login(this.user).subscribe(
       res => {
         const userReturn = res.json();
@@ -35,7 +34,7 @@ export class LoginComponent {
         }
       },
       error => {
-        console.log(error.text());
+        console.log(error);
       });
   }
 

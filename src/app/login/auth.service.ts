@@ -18,7 +18,7 @@ export class AuthService {
 
   login(user): Observable<any> {
    const body = JSON.stringify(user);
-   return this.http.post('http://localhost:8080/destiny/sessions/create', body, { headers: contentHeaders });
+   return this.http.post('http://localhost:8080/lol-team/sessions/create', body, { headers: contentHeaders });
   }
 
   loggedIn(id): void {
