@@ -1,8 +1,8 @@
-import {AppLoaderDirective} from './directives/appLoader.directive';
 import {AppLoaderComponent} from './components/appLoader.component';
 import {CommonModule} from '@angular/common';
 import {NgModule, ModuleWithProviders} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AppActiveDirective } from './directives/appActivate.directive';
 
 @NgModule({
   imports: [
@@ -10,17 +10,12 @@ import { BrowserModule } from '@angular/platform-browser';
   ],
   declarations: [
     AppLoaderComponent,
-    AppLoaderDirective
+    AppActiveDirective
   ],
   exports: [
     AppLoaderComponent,
-    AppLoaderDirective
+    AppActiveDirective
   ]
 })
 export class SharedModule {
-   static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: AppLoaderComponent
-    };
-  }
 }

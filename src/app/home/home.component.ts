@@ -10,5 +10,4 @@ export class HomeComponent {
   constructor(private http: Http) {
 
   }
-
 }

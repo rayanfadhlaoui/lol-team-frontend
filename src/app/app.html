@@ -1,5 +1,7 @@
-<div class="topnav" id="myTopnav">
-	<a routerLink="/login">Login</a>
-	<a routerLink="/home" routerLinkActive="active">Home</a>
-</div>
+<ul>
+	<li><a appActive="/login" routerLink="/login">Login</a></li>
+	<li><a appActive="/home" routerLink="/home">home</a></li>
+	<li appActive="/about" style="float:right"><a routerLink="/about">About</a></li>
+	<li appActive="/myTeam" style="float:right"><a routerLink="/myTeam">My Team</a></li>
+</ul>
 <router-outlet></router-outlet>
