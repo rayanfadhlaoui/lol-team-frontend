@@ -1,0 +1,9 @@
+<form>
+    <input type="text" [(ngModel)]="summonerNameToAdd" name="summonerNameToAdd" id="summonerNameToAdd"
+            placeholder="Summoner name" required autofocus>
+    <button class="w3-round w3-blue" (click)="addSummonerToTeam()" type="submit">Add Summoner</button>
+    <br><br>
+    <div *ngIf="errorMessage" class="alert alert-danger">
+            <strong>{{errorMessage}}.</strong>
+    </div>
+</form>

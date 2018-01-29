@@ -1,0 +1,11 @@
+<div *ngIf="team">
+    <h2 align="center">Team : {{team.name}}</h2>
+    
+    <p *ngIf="team.summoners.length === 0;">No Summoners associated to the team.</p>
+    <div class="summoners">
+        <div class="alert alert-info" *ngFor="let summoner of team.summoners">
+            {{summoner.name}}
+        </div>
+    </div>
+    <my-team-form [team]="team"></my-team-form>        
+</div>

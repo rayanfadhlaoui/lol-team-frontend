@@ -1,0 +1,29 @@
+	p{
+		text-align: center;
+		font-size: 22px;
+		font-family:"Mrs Eaves";
+	}
+
+	h2 {
+		font-size: 32px;
+		font-family:"Mrs Eaves";
+	}
+
+    .selected {
+		background-color: #CFD8DC !important;
+		color: white;
+    }
+
+    .summoners {
+		font-family:"Mrs Eaves";
+		font-size: medium;
+		margin-left: 25%;
+		list-style-type: none;
+		padding: 0;
+		width: 50%;
+	}
+	
+	.alert-info {
+		font-family:"Mrs Eaves";
+		color: black;
+	}

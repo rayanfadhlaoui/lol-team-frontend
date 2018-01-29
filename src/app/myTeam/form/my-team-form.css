@@ -1,0 +1,31 @@
+form {
+    margin-left: 25%;
+    list-style-type: none;
+    padding: 0;
+    width: 50%; 
+}
+
+input {
+    padding-left: 1em;
+    width: 75%;
+    height: 35px;
+    font-family:"Mrs Eaves";
+}
+
+button {
+    width: 14%;
+    margin-left: 10%;
+    height: 35px;
+    border:none;
+    overflow:hidden;
+    text-decoration:none;
+    text-align:center;
+    white-space:nowrap;
+    font-family:"Mrs Eaves";
+    color: #ffffffda
+}
+
+button:hover{
+    box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+}
