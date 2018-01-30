@@ -28,4 +28,15 @@ export class MyTeamComponent implements OnInit {
       }
     );
   }
+
+  importGames(summoner: Summoner): void {
+    this.teamService.importGames(summoner).subscribe(
+      res => {
+        alert('yes papi ?');
+      },
+      err => {
+        alert('wtf papi ?');
+      }
+    );
+  }
 }

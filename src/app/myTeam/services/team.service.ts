@@ -7,6 +7,7 @@ import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/delay';
 import { Team } from './team';
 import { HttpClient } from '@angular/common/http';
+import { Summoner } from './summoner';
 
 
 @Injectable()
@@ -26,6 +27,10 @@ export class TeamService {
       summonerName: summonerName
     };
     return this.http.post('http://localhost:8080/lol-team/myTeam/addSummonerToTeam', params);
+  }
+
+  importGames(summoner: Summoner): Observable<any> {
+    return this.http.post('http://localhost:8080/lol-team/myTeam/importGames', summoner);
   }
 
 }

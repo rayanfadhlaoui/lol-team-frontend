@@ -5,6 +5,8 @@
     <div class="summoners">
         <div class="alert alert-info" *ngFor="let summoner of team.summoners">
             {{summoner.name}}
+            {{summoner.lastUpdate != null ? 'Last update :' + (summoner.lastUpdate | date :'short')  : 'Never been updated'}}
+            <button class="w3-btn w3-green w3-round" (click)="importGames(summoner)">Import games</button>
         </div>
     </div>
     <my-team-form [team]="team"></my-team-form>        

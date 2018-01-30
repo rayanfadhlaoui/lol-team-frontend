@@ -22,6 +22,16 @@
 		padding: 0;
 		width: 50%;
 	}
+
+	.summoners button {
+		font-family:"Mrs Eaves";
+		float: right;
+		height: 35px;
+		position: relative;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		bottom: 5px;
+	}
 	
 	.alert-info {
 		font-family:"Mrs Eaves";
