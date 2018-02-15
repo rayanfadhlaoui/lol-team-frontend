@@ -1,0 +1,48 @@
+button-loader:hover {
+    box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+}
+
+button-loader {
+    font-family:"Mrs Eaves";
+    float: right;
+    height: 35px;
+    width: 125px;
+    position: relative;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    bottom: 5px;
+}
+
+.w3-btn {
+    color: rgb(216, 216, 216);
+}
+
+.alert-info {
+    cursor: pointer;
+    font-family:"Mrs Eaves";
+    color: rgb(216, 216, 216);
+    background-color: #1f0b25f5;
+}
+
+.container {
+    height: 100%;
+    font-family:"Mrs Eaves";
+    display: inline-block;
+    width: 30%;
+}
+
+.container-center {
+    height: 100%;    
+    font-family:"Mrs Eaves";
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+}
+
+.container-left {
+    margin-top: 10px;
+    font-family:"Mrs Eaves";
+    float: right;
+    width: 30%;
+}

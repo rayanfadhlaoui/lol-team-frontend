@@ -6,13 +6,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { TeamService } from '../services/team.service';
 import { MyTeamFormComponent } from '../form/my-team-form.component';
 import { FormsModule } from '@angular/forms';
+import { MyTeamSummonerComponent } from '../my-team-summoner/my-team-summoner.component';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   declarations: [
-    MyTeamComponent, MyTeamFormComponent
+    MyTeamComponent, MyTeamFormComponent, MyTeamSummonerComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule, MyTeamRoutingModule, FormsModule
+    BrowserModule, HttpClientModule, MyTeamRoutingModule, FormsModule, SharedModule
   ],
   providers: [TeamService],
   bootstrap: [MyTeamComponent]

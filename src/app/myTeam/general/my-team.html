@@ -1,13 +1,13 @@
-<div *ngIf="team">
+<div class='main-container' *ngIf="team">
     <h2 align="center">Team : {{team.name}}</h2>
     
     <p *ngIf="team.summoners.length === 0;">No Summoners associated to the team.</p>
     <div class="summoners">
-        <div class="alert alert-info" *ngFor="let summoner of team.summoners">
-            {{summoner.name}}
-            {{summoner.lastUpdate != null ? 'Last update :' + (summoner.lastUpdate | date :'short')  : 'Never been updated'}}
-            <button class="w3-btn w3-green w3-round" (click)="importGames(summoner)">Import games</button>
-        </div>
+        <ul>
+            <li *ngFor="let summoner of team.summoners">
+                <my-team-summoner [summoner]="summoner"></my-team-summoner>
+            </li>
+          </ul>
     </div>
     <my-team-form [team]="team"></my-team-form>        
 </div>

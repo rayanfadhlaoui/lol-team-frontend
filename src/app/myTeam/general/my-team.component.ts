@@ -16,8 +16,10 @@ export class MyTeamComponent implements OnInit {
   constructor(public teamService: TeamService) {}
 
   team: Team;
+  summonerIdBeingImported: number;
 
   ngOnInit(): void {
+    this.summonerIdBeingImported = null;
     const userId = Number(localStorage.getItem('id_token'));
     this.teamService.loadTeam(userId).subscribe(
       res => {
@@ -30,13 +32,29 @@ export class MyTeamComponent implements OnInit {
   }
 
   importGames(summoner: Summoner): void {
-    this.teamService.importGames(summoner).subscribe(
+    this.summonerIdBeingImported = summoner.id;
+    const userId = Number(localStorage.getItem('id_token'));
+    this.teamService.importGames(summoner, userId).subscribe(
       res => {
-        alert('yes papi ?');
+        summoner = res;
+        this.updateTeam(summoner);
       },
       err => {
         alert('wtf papi ?');
       }
     );
+  }
+
+  private updateTeam(newSummoner: Summoner) {
+    let index = 0;
+    let count = 0;
+    this.team.summoners.forEach(summoner => {
+      if (summoner.id === newSummoner.id) {
+        index = count;
+      }
+      count++;
+    });
+
+    this.team.summoners[index] = newSummoner;
   }
 }

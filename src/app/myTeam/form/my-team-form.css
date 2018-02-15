@@ -1,8 +1,9 @@
 form {
-    margin-left: 25%;
+    margin: auto;
+    color: black;
     list-style-type: none;
     padding: 0;
-    width: 50%; 
+    width: 90%; 
 }
 
 input {

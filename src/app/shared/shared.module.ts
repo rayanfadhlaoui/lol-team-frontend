@@ -1,20 +1,23 @@
-import {AppLoaderComponent} from './components/appLoader.component';
 import {CommonModule} from '@angular/common';
 import {NgModule, ModuleWithProviders} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppActiveDirective } from './directives/appActivate.directive';
+import { LoaderComponent } from './components/loader/loader.component';
+import { AppActiveDirective } from './directives/activate/appActivate.directive';
+import { ButtonLoaderComponent } from './components/loader/button-loader/button-loader.component';
 
 @NgModule({
   imports: [
     CommonModule, BrowserModule
   ],
   declarations: [
-    AppLoaderComponent,
-    AppActiveDirective
+    LoaderComponent,
+    AppActiveDirective,
+    ButtonLoaderComponent
   ],
   exports: [
-    AppLoaderComponent,
-    AppActiveDirective
+    LoaderComponent,
+    AppActiveDirective,
+    ButtonLoaderComponent
   ]
 })
 export class SharedModule {

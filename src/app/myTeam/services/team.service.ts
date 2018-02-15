@@ -21,16 +21,24 @@ export class TeamService {
     return this.http.post('http://localhost:8080/lol-team/myTeam/findTeam', userId);
   }
 
+  getNbGamesImported(summoner: Summoner): Observable<any> {
+    return this.http.post('http://localhost:8080/lol-team/myTeam/getNbGamesImported', summoner);
+  }
+
   addSummonerToTeam(team: Team, summonerName: string): Observable<any> {
     const params = {
-      team: team,
-      summonerName: summonerName
+      team,
+      summonerName
     };
     return this.http.post('http://localhost:8080/lol-team/myTeam/addSummonerToTeam', params);
   }
 
-  importGames(summoner: Summoner): Observable<any> {
-    return this.http.post('http://localhost:8080/lol-team/myTeam/importGames', summoner);
+  importGames(summoner: Summoner, userId: number): Observable<any> {
+    const params = {
+      summoner,
+      userId
+    };
+    return this.http.post('http://localhost:8080/lol-team/myTeam/importGames', params);
   }
 
 }

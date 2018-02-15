@@ -4,6 +4,16 @@
 		font-family:"Mrs Eaves";
 	}
 
+	ul {
+		list-style-type: none;
+		margin: 0px;
+		-webkit-padding-start: 0px;		
+	}
+
+	li {
+		list-style-type: none;
+	}
+
 	h2 {
 		font-size: 32px;
 		font-family:"Mrs Eaves";
@@ -12,28 +22,22 @@
     .selected {
 		background-color: #CFD8DC !important;
 		color: white;
-    }
+	}
+	
+	.main-container {
+		margin: auto;
+		border-radius: 3%;
+		margin-top: 2px;		
+		background-color: #130716;
+		width: 60%;
+		border:2px solid rgb(49, 49, 49);
+	}
 
     .summoners {
 		font-family:"Mrs Eaves";
 		font-size: medium;
-		margin-left: 25%;
+		margin: auto;
 		list-style-type: none;
 		padding: 0;
-		width: 50%;
-	}
-
-	.summoners button {
-		font-family:"Mrs Eaves";
-		float: right;
-		height: 35px;
-		position: relative;
-		padding-top: 5px;
-		padding-bottom: 5px;
-		bottom: 5px;
-	}
-	
-	.alert-info {
-		font-family:"Mrs Eaves";
-		color: black;
+		width: 90%;
 	}

@@ -1,0 +1,14 @@
+<div class="alert alert-info">
+        <div class='container'>
+                {{summoner.name}} <br/>
+                Last update : {{displayLastUpdate()}}
+        </div>
+        <div class='container-center' *ngIf="summoner.totalGames">
+                Games imported / played<br>{{ displayTotalImportedGames() }} / {{summoner.totalGames}}
+        </div>
+        <div class='container-left'>
+                <button-loader [isLoading]="isLoadingFunc()" (click)="importGames()" class="w3-button w3-blue w3-hover-indigo w3-round">
+                      Import games
+                </button-loader>
+        </div>
+</div>
