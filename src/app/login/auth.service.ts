@@ -1,32 +1,42 @@
-import { contentHeaders } from '../common/headers';
-import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import { Router } from '@angular/router';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Router } from "@angular/router";
+import { catchError } from "rxjs/operators";
+import { Observable } from "rxjs/Observable";
 
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/delay';
-
+import { headers } from "../common/headers";
 
 @Injectable()
 export class AuthService {
   isLoggedIn = false;
   redirectUrl: string;
+  error: null;
 
-  constructor(public router: Router, public http: Http) {}
+  constructor(public router: Router, public http: HttpClient) {}
 
-  login(user): Observable<any> {
-   const body = JSON.stringify(user);
-   return this.http.post('http://localhost:8080/lol-team/sessions/create', body, { headers: contentHeaders });
+  public login(user): Observable<any> {
+    const body = JSON.stringify(user);
+    return this.http.post(
+      "http://localhost:8080/lol-team/sessions/create",
+      body,
+      headers
+    );
   }
 
-  loggedIn(id): void {
+  public loginError(error): void {
+    this.error = error;
+  }
+
+  public loggedIn(id): void {
     this.isLoggedIn = true;
-    localStorage.setItem('id_token', id);
+    localStorage.setItem("id_token", id);
   }
 
-  logout(): void {
+  public logout(): void {
     this.isLoggedIn = false;
+  }
+
+  public getToken(): string {
+    return localStorage.getItem("id_token");
   }
 }
