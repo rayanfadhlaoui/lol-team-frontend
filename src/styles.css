@@ -1,7 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-body{
-    background-image: url('assets/images/web-site-back.png');
-    color: white;
-    background-color: #aaaaaa;
-    background-size: cover;
+html,
+body {
+  height: 100%;
 }
