@@ -66,8 +66,10 @@ export class MyTeamSummonerComponent implements OnInit {
     this.isLoading = true;
     const userId = Number(localStorage.getItem('id_token'));
     this.teamService.importGames(this.summoner, userId).subscribe(
-      summoner => {
-        this.summoner = summoner;
+      summonerRes => {
+        this.summoner.totalGames = summonerRes.totalGames;
+        this.summoner.lastUpdate = summonerRes.lastUpdate;
+        this.summoner.totalImportedGames = summonerRes.totalImportedGames;
         this.isLoading = false;
         this.refreshImportedGames();
       },
