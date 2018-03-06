@@ -9,7 +9,11 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot -prod"
+    "postinstall": "ng build --aot -prod",
+    "docker-clean-images": "sh ./scripts/docker/clean-images.sh",
+    "docker-clean-project": "sh ./scripts/docker/clean-project.sh",
+    "docker-build-front": "sh ./scripts/docker/build.sh lolteam/front",
+    "docker-run": "sh ./scripts/docker/run.sh"
   },
   "prettier": {
     "singleQuote": true,
