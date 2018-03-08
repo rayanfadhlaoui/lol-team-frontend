@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class AuthService {
   isLoggedIn = false;
   redirectUrl: string;
+  error: null;
 
   constructor(public router: Router, public http: HttpClient) {}
 
@@ -15,12 +16,20 @@ export class AuthService {
    return this.http.post('http://localhost:8080/sessions/create', user);
   }
 
-  loggedIn(id): void {
-    this.isLoggedIn = true;
-    localStorage.setItem('id_token', id);
+  public loginError(error): void {
+    this.error = error;
   }
 
-  logout(): void {
+  public loggedIn(id): void {
+    this.isLoggedIn = true;
+    localStorage.setItem("id_token", id);
+  }
+
+  public logout(): void {
     this.isLoggedIn = false;
+  }
+
+  public getToken(): string {
+    return localStorage.getItem("id_token");
   }
 }

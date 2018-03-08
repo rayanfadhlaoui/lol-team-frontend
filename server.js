@@ -1,23 +1,17 @@
 const express = require('express');
-const app = express();
+const bodyParser = require('body-parser');
+const http = require('http');
 const path = require('path');
 
-app.use(express.static(__dirname + '/dist'));
+const app = express();
+const port = process.env.LOLTEAM_FRONT_PORT || 8080;
 
-const forceSSL = function() {
-    return function (req, res, next) {
-      if (req.headers['x-forwarded-proto'] !== 'https') {
-        return res.redirect(
-         ['https://', req.get('Host'), req.url].join('')
-        );
-      }
-      next();
-    }
-  }
-
-
-app.use(forceSSL());
-app.get('/*', function(req, res){
-    res.sendFile(path.join(__dirname + '/dist/index.html'));
+app.use(express.static(path.join(__dirname, 'dist')));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
-app.listen(process.env.PORT || 8080);
+app.set('port', port);
+
+http
+  .createServer(app)
+  .listen(port, () => console.log(`Running on localhost:${port}`));
