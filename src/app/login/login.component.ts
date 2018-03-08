@@ -18,9 +18,8 @@ export class LoginComponent {
   login() {
     const sub = this.authService.login(this.user).subscribe(
       res => {
-        const userReturn = res.json();
-        if (userReturn.id !== -1) {
-          this.authService.loggedIn(userReturn.id);
+        if (res.id !== -1) {
+          this.authService.loggedIn(res.id);
           const redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/home';
 
           const navigationExtras: NavigationExtras = {
@@ -34,7 +33,7 @@ export class LoginComponent {
         }
       },
       error => {
-        console.log(error);
+        console.log('fait chier' + error);
       });
   }
 
