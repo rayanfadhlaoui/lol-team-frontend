@@ -1,4 +1,3 @@
-import { contentHeaders } from '../common/headers';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
@@ -22,7 +21,7 @@ export class AuthService {
 
   public loggedIn(id): void {
     this.isLoggedIn = true;
-    localStorage.setItem("id_token", id);
+    localStorage.setItem('id_token', id);
   }
 
   public logout(): void {
@@ -30,6 +29,6 @@ export class AuthService {
   }
 
   public getToken(): string {
-    return localStorage.getItem("id_token");
+    return localStorage.getItem('id_token');
   }
 }

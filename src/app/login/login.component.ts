@@ -1,17 +1,17 @@
-import { AuthService } from "./auth.service";
-import { Component } from "@angular/core";
-import { Router, NavigationExtras } from "@angular/router";
+import { AuthService } from './auth.service';
+import { Component } from '@angular/core';
+import { Router, NavigationExtras } from '@angular/router';
 
-import { errors } from "./../utils/errors";
+import { errors } from './../utils/errors';
 
 @Component({
-  templateUrl: "./login.html",
-  styleUrls: ["./login.css"]
+  templateUrl: './login.html',
+  styleUrls: ['./login.css']
 })
 export class LoginComponent {
-  netImage: any = "assets/images/Arcade-Riven.png";
+  netImage: any = 'assets/images/Arcade-Riven.png';
   messageError: string;
-  user = { username: "", password: "" };
+  user = { username: '', password: '' };
 
   constructor(public authService: AuthService, public router: Router) {}
 
@@ -31,9 +31,6 @@ export class LoginComponent {
         } else {
           this.messageError = 'Username or password is incorrect';
         }
-      },
-      error => {
-        console.log('fait chier' + error);
       });
   }
 
